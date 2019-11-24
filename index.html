@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body {
+        font-family: helvetica;
+        margin: 0;
+        height: 100vh;
+        background: #b92b27;  /* Vanhat selaimet näyttävät taustavärin, kun linear-gradient ei toimi */
+        background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        /* Testailua */
+        /* background-size: cover;
+        background-image: url("https://cdn.pixabay.com/photo/2018/01/11/19/02/architecture-3076685_960_720.jpg"); */
+      }
+
+      .luukku {
+        /* Laita pienille näytöille pelkkä block*/
+        display: inline-block;
+        height: 25vh;
+        width: 16vw;
+        color: white;
+        transition: 0.8s;
+        /* border: 2px solid white; */
+      }
+
+      .luukku:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        /*background-color: white;*/
+      }
+
+      .teksti {
+        font-size: 50px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        text-align: center;
+      }
+
+      .alert {
+        font-size: 60px;
+        color: red;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        text-align: center;
+      }
+
+      .close { /* Kyseessä kuvan sulkemisnappi */
+        float: right;
+        top: 0;
+        transition: 0.4s;
+        padding: 16px;
+        color: white;
+        background-color: #DAA520;
+        border: 0;
+        font-size: 30px;
+      }
+
+      .close:hover {
+        background-color: green;
+      }
+
+      #kuvat {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        text-align: center;
+        display: none;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+    <noscript> <!-- Ilmoitus toimimattomuudesta puuttuvan JavaScripti tuen kanssa-->
+      <div class="alert">
+        Huomio: Tämä ei toimi, jos JavaScript ei ole päällä.😞 Ilman JavaScriptiä toimiva versio tulossa piakkoin.
+      </div>
+    </noscript>
+    <div id="kuvat"></div>
+    <div id="luukut">
+      <div id="luukku-1-avaa" class="luukku">
+        <div class="teksti">
+          1
+        </div>
+      </div>
+      <div id="luukku-2-avaa" class="luukku">
+        <div class="teksti">
+          2
+        </div>
+      </div>
+      <div id="luukku-3-avaa" class="luukku">
+        <div class="teksti">
+          3
+        </div>
+      </div>
+      <div id="luukku-4-avaa" class="luukku">
+        <div class="teksti">
+          4
+        </div>
+      </div>
+      <div id="luukku-5-avaa" class="luukku">
+        <div class="teksti">
+          5
+        </div>
+      </div>
+      <div id="luukku-6-avaa" class="luukku">
+        <div class="teksti">
+          6
+        </div>
+      </div>
+      <div id="luukku-7-avaa" class="luukku">
+        <div class="teksti">
+          7
+        </div>
+      </div>
+      <div id="luukku-8-avaa" class="luukku">
+        <div class="teksti">
+          8
+        </div>
+      </div>
+      <div id="luukku-9-avaa" class="luukku">
+        <div class="teksti">
+          9
+        </div>
+      </div>
+      <div id="luukku-10-avaa" class="luukku">
+        <div class="teksti">
+          10
+        </div>
+      </div>
+      <div id="luukku-11-avaa" class="luukku">
+        <div class="teksti">
+          11
+        </div>
+      </div>
+      <div id="luukku-12-avaa" class="luukku">
+        <div class="teksti">
+          12
+        </div>
+      </div>
+      <div id="luukku-13-avaa" class="luukku">
+        <div class="teksti">
+          13
+        </div>
+      </div>
+      <div id="luukku-14-avaa" class="luukku">
+        <div class="teksti">
+          14
+        </div>
+      </div>
+      <div id="luukku-15-avaa" class="luukku">
+        <div class="teksti">
+          15
+        </div>
+      </div>
+      <div id="luukku-16-avaa" class="luukku">
+        <div class="teksti">
+          16
+        </div>
+      </div>
+      <div id="luukku-17-avaa" class="luukku">
+        <div class="teksti">
+          17
+        </div>
+      </div>
+      <div id="luukku-18-avaa" class="luukku">
+        <div class="teksti">
+          18
+        </div>
+      </div>
+      <div id="luukku-19-avaa" class="luukku">
+        <div class="teksti">
+          19
+        </div>
+      </div>
+      <div id="luukku-20-avaa" class="luukku">
+        <div class="teksti">
+          20
+        </div>
+      </div>
+      <div id="luukku-21-avaa" class="luukku">
+        <div class="teksti">
+          21
+        </div>
+      </div>
+      <div id="luukku-22-avaa" class="luukku">
+        <div class="teksti">
+          22
+        </div>
+      </div>
+      <div id="luukku-23-avaa" class="luukku">
+        <div class="teksti">
+          23
+        </div>
+      </div>
+      <div id="luukku-24-avaa" class="luukku">
+        <div class="teksti">
+          24
+        </div>
+      </div>
+    </div>
+    <script>
+      //Aseta kuvat tänne
+      var pics = [ 'kuvat/1.jpg', 'kuvat/2.jpg', 'kuvat/3.jpg', 'kuvat/4.jpg', 'kuvat/5.jpg', 'kuvat/6.jpg', 'kuvat/7.jpg', 'kuvat/8.jpg', 'kuvat/9.jpg', 'kuvat/10.jpg', 'kuvat/11.jpg', 'kuvat/12.jpg', 'kuvat/13.jpg', 'kuvat/14.jpg', 'kuvat/15.jpg', 'kuvat/16.jpg', 'kuvat/17.jpg', 'kuvat/18.jpg', 'kuvat/19.jpg', 'kuvat/20.jpg', 'kuvat/21.jpg', 'kuvat/22.jpg', 'kuvat/23.jpg', 'kuvat/24.jpg'];
+
+      var date = new Date();
+
+      $('div[id^=luukku-][id$=-avaa]').click(function() {
+        var id = $(this).attr('id');
+        nro = id.replace("luukku-", "").replace("-avaa", "").replace("#", "");
+
+        console.log("Avataan luukku numero " + nro);
+
+        listanro = nro - 1; //Muista! Listat alkavat nollasta
+        open(pics[listanro], nro);
+      })
+
+      function open(img, number) {
+        //Tarkasta onko jo joulu
+        if (date.getMonth() == 11) {
+          if (date.getDate() >= number) {
+            $("#kuvat").html(""); //clear
+            document.getElementById("kuvat").style.display = "inline-block"; //Laita näkyvyys takaisin
+            document.getElementById("luukut").style.display = "none"; //poista luukut luokka näkyvistä
+            $('#kuvat').html("<img src='" + img + "'><button class=\"close\" onclick='document.getElementById(\"kuvat\").style.display = \"none\";document.getElementById(\"luukut\").style.display = \"block\";'>&times;</button>");
+          } else {
+            alert("Eipäs kurkita...");
+          }
+        } else {
+          alert("Eipäs kurkita...");
+        }
+      }
+    </script>
+  </body>
+</html>
