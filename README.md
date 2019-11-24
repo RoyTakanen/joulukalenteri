@@ -8,3 +8,7 @@ Voit kopioida tämän varaston (repository) omalle koneellesi. Vaihtelemalla kuv
 ## Python?
 
 Käytin Pythonia generoimaan jotkut ärsyttävimmät asiat kuten kaikki luukut jne. Tiedoston nimi on generaattori.py. Toinen päätyö Pythonilla oli kuvien nimeämisessä ja lataamisessa. Tämä tiedosto on kuvapoika.py. Se sisältää eri komentoja, joilla voit ladata ja järjestellä/nimetä uudelleen kuvia.
+
+## To do
+
+- Mobiili responsiivisuus
