@@ -26,3 +26,14 @@ jobs:
           title: Vuoden ${{ steps.date.outputs.vuosi }} kuvat
           files: |
             kuvat/*
+
+  pyyhi:
+      - name: Poista vanhat kuvat
+        run: rm -rf kuvat/*
+
+      - name: Päivitä Githubiin
+        uses: test-room-7/action-update-file@v1
+        with:
+            file-path: .
+            commit-msg: Poistettu vanhat kuvat
+            github-token: ${{ secrets.GITHUB_TOKEN }}
