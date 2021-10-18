@@ -1,7 +1,5 @@
 # Joulukalenteri
-Kuvakalenteri, joka on tehty HTML:llä, JS:llä ja Pythonilla
-
-https://kaikkitietokoneista.github.io/joulukalenteri/ 
+Githubin actioneilla toimiva kuvakalenteri.
 
 ## Oman kopion tekeminen
 
