@@ -1,14 +1,10 @@
 # Joulukalenteri
 Githubin actioneilla toimiva kuvakalenteri.
 
-## Oman kopion tekeminen
+## Toiminta
 
-Voit kopioida tämän varaston (repository) omalle koneellesi. Vaihtelemalla kuvia kuvat-hakemistossa saat siitä omannäköisesi. Muista kuitenkin, että kuvien nimien pitää olla 1-24.jpg.
+Repository toimii kahden actionin avulla.
 
-## Python?
+Ensimmäinen ajaa, joka päivä jouluna skriptin kuvapoika.py (skripti tosin tarkastaa onko päivä väliltä 1-24.), joka etsii jouluaiheisen kuvan pixabaysta.
 
-Käytin Pythonia generoimaan jotkut ärsyttävimmät asiat kuten kaikki luukut jne. Tiedoston nimi on generaattori.py. Toinen päätyö Pythonilla oli kuvien nimeämisessä ja lataamisessa. Tämä tiedosto on kuvapoika.py. Se sisältää eri komentoja, joilla voit ladata ja järjestellä/nimetä uudelleen kuvia.
-
-## To do
-
-- Mobiili responsiivisuus
+Toinen skripti ajaa joulukuun 28. päivänä ja arkistoi kuvat uuteen releaseen vuoden nimellä.
