@@ -44,3 +44,4 @@ jobs:
           committer_name: GitHub Actions
           committer_email: actions@github.com
           remove: 'kuvat/*'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
