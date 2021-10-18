@@ -11,10 +11,6 @@ api_key = environ.get('PIXABAY_KEY')
 
 day_number = datetime.today().strftime('%d')
 
-# Tarkasta onko päivä 1-24, koska cron ajetaan kuukauden kaikkina päivinä
-if not 1 <= day_number <= 24:
-    sys.exit()
-
 # Tarkasta onko kuvat kansio olemassa, koska ensimmäisenä päivänä sitä ei ole
 if not path.isdir('kuvat'):
     mkdir('kuvat')
