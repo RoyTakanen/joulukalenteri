@@ -40,5 +40,6 @@ jobs:
         with:
             file-path: .
             allow-dot: true
+            allow-removing: true
             commit-msg: Poistettu vanhat kuvat
             github-token: ${{ secrets.GITHUB_TOKEN }}
