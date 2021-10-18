@@ -3,7 +3,7 @@ name: "Arkistoija"
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 1 1 *"
+    - cron: "0 0 28 12 *" # We do not want to run in January because then the year for photo release is not the correct one
 
 jobs:
   arkistoi:
