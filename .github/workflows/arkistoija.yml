@@ -1,0 +1,27 @@
+name: "Arkistoija"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  pre-release:
+    name: "Arkistoi vanhat kuvat"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      # ...
+      - name: Tarkasta vuosi
+        id: date
+        run: echo "::set-output name=vuosi::$(date +'%Y')"
+      - name: "Arkistoi kuvat"
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: ${{ steps.date.outputs.vuosi }}
+          prerelease: false
+          title: Vuoden ${{ steps.date.outputs.vuosi }} kuvat
+          files: |
+            kuvat/*
