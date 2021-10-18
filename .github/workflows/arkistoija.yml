@@ -32,10 +32,7 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          path: master
+      - uses: actions/checkout@v2
 
       - name: Poista vanhat kuvat ja päivitä Githubiin
         uses: EndBug/add-and-commit@v7
