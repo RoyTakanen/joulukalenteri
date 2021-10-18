@@ -28,6 +28,10 @@ jobs:
             kuvat/*
 
   pyyhi:
+    name: "Pyyhi vanhat kuvat"
+    runs-on: "ubuntu-latest"
+
+    steps:
       - name: Poista vanhat kuvat
         run: rm -rf kuvat/*
 
