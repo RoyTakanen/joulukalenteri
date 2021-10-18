@@ -1,0 +1,25 @@
+name: "Etsijä"
+
+on:
+  actions_dispatch:
+  schedule:
+    - cron: "0 0 1-24 12 *"
+
+jobs:
+  etsi:
+    name: "Etsi uusi kuva"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Etsi kuva
+        run: PIXABAY_KEY=${{ secrets.PIXABAY_KEY }} python ./.github/workflows/kuvapoika.py
+
+      - name: Päivitä kuva Githubiin
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: Lisätty uusi kuva
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
+          github_token: ${{ secrets.GITHUB_TOKEN }}
