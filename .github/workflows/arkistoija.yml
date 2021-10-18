@@ -15,6 +15,9 @@ jobs:
         id: date
         run: echo "::set-output name=vuosi::$(date +'%Y')"
       - name: "Arkistoi kuvat"
+        run: |
+          echo "Arkistoitu!"
+
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
