@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+}
+
+.sidebar {
+    display: inline-block;
+    flex: 1;
+}
+
+.main {
+    display: inline-block;
+    flex: 3;
+}
+
+.main img {
+    width: 100%;
+    height: auto;
+}

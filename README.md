@@ -1,16 +1,12 @@
-# Joulukalenteri
-Githubin actioneilla toimiva kuvakalenteri.
+# React + Vite
 
-## Toiminta
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Repository toimii kahden actionin avulla.
+Currently, two official plugins are available:
 
-Ensimmäinen ajaa, joka päivä jouluna skriptin kuvapoika.py (skripti tosin tarkastaa onko päivä väliltä 1-24.), joka etsii jouluaiheisen kuvan pixabaysta.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Toinen skripti ajaa joulukuun 28. päivänä ja arkistoi kuvat uuteen releaseen vuoden nimellä.
+## Expanding the ESLint configuration
 
-## Todo
-
-- [ ] päivitä ulkoasu
-- [ ] lisää hakusanoja kuvapoikaan
-- [ ] laita kuvapoika tarkastamaan onko kuva jo olemassa
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
