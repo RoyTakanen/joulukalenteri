@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 export default function AdventCalendar() {
     const [imageSrc, setImageSrc] = useState("");
+    const [trivia, setTrivia] = useState("");
 
     const testingMode = true;
 
@@ -17,6 +18,12 @@ export default function AdventCalendar() {
         console.log("Avattu " + day)
 
         setImageSrc("https://picsum.photos/1920/1080")
+
+        fetch("https://opentdb.com/api.php?amount=1").then(response => {
+            return response.json();
+        }).then(data => {
+            setTrivia("Trivia for day: \n\n" + data.results[0].question);
+        });
     }
 
 
@@ -42,6 +49,7 @@ export default function AdventCalendar() {
                         <h1 className="title">Joulukalenteri</h1>
                     </div>
                     <img src={imageSrc} />
+                    <p>{trivia}</p>
                 </div>
             </div>
         </>
