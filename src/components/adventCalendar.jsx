@@ -1,11 +1,15 @@
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react'
+import './adventCalendar.css'
 
-export default function AdventCalendar() {
+// Strict mode is not used to avoida double rendering of the app, which can cause issues with the advent calendar functionality.
+export default function AdventCalendar(props) {
     const [imageSrc, setImageSrc] = useState(null); // cannot pass empty string to img src, causes page relaod
     const [trivia, setTrivia] = useState("Voit lisätä omat kuvasi luomalla Github-repositorion, jossa on 24 kuvaa nimettynä 01.jpg, 02.jpg, ..., 24.jpg. Sitten voit valita repositorion vasemmalta valikosta.");
     const [repoList, setRepoList] = useState([]);
-    const [githubRepo, setGithubRepo] = useState("random");
+    const [githubRepo, setGithubRepo] = useState(props.githubRepo || "random");
 
+    console.log("Github repo: " + githubRepo)
     const testingMode = true;
 
     const openImage = (day) => {
@@ -45,7 +49,6 @@ export default function AdventCalendar() {
                 console.log("Repo list updated: ", repoList);
             })
         })
-        console.log("test")
     }, [])
 
     return (
@@ -56,9 +59,13 @@ export default function AdventCalendar() {
                         <h1 className="title">Luukut</h1>
                     </div>
                     <select value={githubRepo} onChange={(e) => setGithubRepo(e.target.value)}>
-                        <option value="random">random</option>
+                        <Link key="random" to={`/joulukalenteri`}>
+                            <option value="random">random</option>
+                        </Link>
                         {repoList.map((repo) => (
-                            <option key={repo} value={repo}>{repo}</option>
+                            <Link key={repo} to={`/joulukalenteri/${repo.split('/')[0]}/${repo.split('/')[1]}`}>
+                                <option key={repo} value={repo}>{repo}</option>
+                            </Link>
                         ))}
                     </select>
                     <ul>
